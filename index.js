@@ -14,7 +14,7 @@ module.exports = (options = { plugins: [] }) => ({
     const { rootDir = options.rootDir || process.cwd() } = options;
     const tmpDirPath = tmp.dirSync().name;
     build.onResolve(
-      { filter: /.\.(css)$/, namespace: "file" },
+      { filter: /.\.(pcss)$/, namespace: "file" },
       async (args) => {
         const sourceFullPath = path.resolve(args.resolveDir, args.path);
         const sourceExt = path.extname(sourceFullPath);
